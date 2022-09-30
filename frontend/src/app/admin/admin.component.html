@@ -1,0 +1,40 @@
+<div style="display: flex;flex-direction: column;justify-content: center;">
+    <h2>Date Range Filter</h2>
+    <div style="display: flex;flex-direction: row;">
+        <div style="display: flex;flex-direction: column;margin-right: 2%;">
+            <label for="">Start Date</label>
+            <input (change)="sdate($event)" type="date" placeholder="Start Date">
+        </div>
+        <div style="display: flex;flex-direction: column;">
+            <label for="">End Date</label>
+            <input (change)="edate($event)" type="date" placeholder="End Date">
+        </div>
+        <div style="display: flex;flex-direction: column;margin-left: 3%;">
+            <label for="">Filter Data</label>
+            <button style="background:linear-gradient(40deg,rgb(147, 88, 174),blue);width:100px;height: max-content;border: 1px solid transparent;margin-top: 1.25%;margin-left: 2%;color: white;"  (click)="filter()">Filter</button>
+        </div>
+    </div>
+    
+</div>
+ 
+<section class="table">
+        <h2 style="">Data</h2>
+          <table border="1">
+            <thead >
+              <td>Name</td>
+              <td>Number</td>
+              <td>Token</td>
+              <!-- <td>Action</td> -->
+            </thead>
+            <tr *ngIf="!data.length" style="text-align: center;">
+                <td colspan="3">No results found</td>
+                
+              </tr>
+            <tr *ngFor="let i of data;let index=index">
+              <td class="td">{{i.name}}</td>
+              <td class="td">{{i.number}}</td>
+              <td class="td">{{i.token}}</td>
+            </tr>
+          </table>
+          <button style="background:linear-gradient(40deg,rgb(86, 30, 2),rgb(58, 43, 36));width:100px;height: max-content;border: 1px solid transparent;margin-top: 1.25%;margin-left: 2%;color: white;border-radius: 5px;padding: 10px;" (click)="reset()">Reset</button>
+</section>

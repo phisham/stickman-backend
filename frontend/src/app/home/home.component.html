@@ -1,0 +1,51 @@
+<div class="topbar">
+  <button style="background-color: rgb(150, 11, 53);color: white;border-radius: 5px;width: max-content;padding: 10px;height: max-content;margin-right: 5%;" routerLink="../admin">Login to Admin page</button>
+</div>
+<div style="display: flex;flex-direction: row;justify-content: center;">
+  <div style="margin-top: 5%;">
+    <h2>Enter Details</h2>
+    <div class="box">
+      <label for="">Name</label>
+      <input (change)="name($event)" style="width: 90%;" type="text" placeholder="Enter name">
+    </div>
+    <section class="table">
+          <table border="1">
+            <thead *ngIf="data.length">
+              
+              <td>Number</td>
+              <td>Token</td>
+              <!-- <td>Action</td> -->
+            </thead>
+            <tr *ngFor="let i of data;let index=index">
+              
+              <td class="td">{{i.number}}</td>
+              <td class="td">{{i.token}}</td>
+            </tr>
+          </table>
+        </section>
+    <div class="box2">
+
+      <input type="number" (change)="storeNumber($event)" placeholder="Enter Number">
+      <button style="background-color: brown;color: white;width: 100%;" (click)="add()">Add</button>
+      
+    </div>
+    <button style="background-color: rgb(8, 3, 28);color: red;width: 100%;border-radius: 4px;margin-top: 10%;padding: 10px;font-weight: bolder;" (click)="reload()">Change Name/Reset</button>
+  </div>
+</div>
+<div *ngIf="show2" class="out2">
+              <div class="pop2 text-center mat-elevation-z4">
+                  <br>
+                  <div class="d-flex flex-column">
+                      <br>
+                    <div>
+                    <h2>Enter complete Details</h2>
+                  </div>
+                  
+                  <div>
+                    <button  mat-button style="background-color: blue;color: white;margin-bottom: 10px;" (click)="close()">Ok</button>
+                  </div>
+                  
+                  </div>
+              </div>
+              
+</div>

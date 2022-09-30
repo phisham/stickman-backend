@@ -1,0 +1,30 @@
+.table{
+   margin-top: 5%;
+   border-radius: 5px;
+ }
+ thead,td{
+   border:1px solid black;
+   padding: 5px;
+   
+ }
+ thead{
+   background-color:grey;
+   font-size: 18px;
+   font-weight: 600;
+ }
+ .td{
+    background-color: #ffffffad;
+    font-size: 12px;
+ }
+ table{
+   border-collapse: collapse;
+   
+   width:500px;
+   border-radius: 5px;
+ }
+ table td{
+   padding: 5px;
+ }
+table tr td{
+  font-size: 12px;
+}
